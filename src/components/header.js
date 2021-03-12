@@ -1,4 +1,15 @@
 const Header = (title, date, temp) => {
+  ///instantiating 
+  const day = document.createElement("span");
+  const header = document.createElement("h1");
+  const temperature = document.createElement("span");
+  ///setting class names / attributes / text 
+  day.classList.add("date");
+  day.textContent = `${ date }`;
+  header.textContent = `${ title }`
+  temperature.classList.add("temp");
+  temperature.textContent = `${ temp }`
+}
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
