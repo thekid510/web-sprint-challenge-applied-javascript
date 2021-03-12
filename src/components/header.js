@@ -1,4 +1,4 @@
-const entryPoint = document.querySelector(".header-container");
+
 const Header = (title, date, temp) => {
   ///instantiating 
   const root = document.createElement("div");
@@ -33,7 +33,10 @@ const Header = (title, date, temp) => {
   //
 
 const headerAppender = (selector) => {
- const newCard = Header("Lambda Times", "January 6, 2021","26°");
+const root = document.querySelector(selector);
+const newCard = Header("Lambda Times", "January 6, 2021","26°");
+root.appendChild(newCard) ;
+
   
   // TASK 2
   // ---------------------
