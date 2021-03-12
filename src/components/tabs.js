@@ -1,5 +1,13 @@
 const Tabs = (topics) => {
-  // TASK 3
+  const topic = document.createElement("div");
+  const topic1 = document.createElement("div");
+  const topic2 = document.createElement("div");
+  const topic3= document.createElement("div");
+  topic.appendChild(topic1, topic2, topic3);
+  topic.classList.add("tab");
+  topic1.textContent = (topics)
+
+
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
   // As an example, if the topics passed are ['javascript', 'bootstrap', 'technology']

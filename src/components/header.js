@@ -1,15 +1,24 @@
+const entryPoint = document.querySelector(".header-container");
 const Header = (title, date, temp) => {
   ///instantiating 
+  const root = document.createElement("div");
+  root.classList.add("header");
   const day = document.createElement("span");
-  const header = document.createElement("h1");
+  const head = document.createElement("h1");
   const temperature = document.createElement("span");
   ///setting class names / attributes / text 
   day.classList.add("date");
   day.textContent = `${ date }`;
-  header.textContent = `${ title }`
+  head.textContent = `${ title }`;
   temperature.classList.add("temp");
   temperature.textContent = `${ temp }`
+  root.appendChild(day);
+  root.appendChild(head);
+  root.appendChild(temperature);
+  
+  return root;
 }
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -22,9 +31,10 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-}
 
 const headerAppender = (selector) => {
+ const newCard = Header("Lambda Times", "January 6, 2021","26°");
+  
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
