@@ -35,7 +35,7 @@ const Header = (title, date, temp) => {
 const headerAppender = (selector) => {
 const root = document.querySelector(selector);
 const newCard = Header("Lambda Times", "January 6, 2021","26°");
-root.appendChild(newCard) ;
+root.appendChild(newCard);
 
   
   // TASK 2
