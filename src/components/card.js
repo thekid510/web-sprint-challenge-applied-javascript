@@ -1,25 +1,30 @@
 import axios from "axios";
 
 const Card = (article) => {
+  console.log(article);
   const {headline, authorPhoto, authorName} = article;
   const root = document.createElement("div");
   const headliner = document.createElement("div");
   const writer = document.createElement("div");
-  const imgcont = document.createElement("div");
+  const imgCont = document.createElement("div");
   const img = document.createElement("img");
   const span = document.createElement("span");
+
   root.classList.add("card");
   headliner.classList.add("headline");
-  headliner.textContent = `${ headline }`;
   writer.classList.add("author");
-  imgcont.classList.add("img-container");
-  img.setAttribute(`src`, article.img);
-  img.textContent = `${ authorPhoto }`
+  imgCont.classList.add("img-container");
+
+  img.setAttribute(`src`, authorPhoto);
+  imgCont.appendChild(img);
+  headliner.textContent = `${ headline }`;
   span.textContent = `By ${ authorName }`;
-  writer.appendChild(imgcont, img);
+
+  writer.appendChild(imgCont);
   root.appendChild(headliner);
   root.appendChild(writer); 
   root.appendChild(span);
+
   root.addEventListener('click', (event) => {
     console.log(headliner);
  });
@@ -49,9 +54,18 @@ const cardAppender = (selector) => {
   axios
   .get("https://lambda-times-api.herokuapp.com/articles")
   .then((res)=> {
-    const element = Card(res.data);
-    card.appendChild(element);
-    console.log(card);
+    const {articles} = res.data;
+    Object.keys(articles).forEach(article => {
+    for(let item of articles[article]){
+      const element = Card(item);
+
+        console.log(articles[article]);
+        card.appendChild(element);
+        console.log(card);
+    }
+    
+    })
+    
   })
   .catch((err) => {
     console.log(err);
