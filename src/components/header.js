@@ -4,7 +4,7 @@ const Header = (title, date, temp) => {
   const root = document.createElement("div");
   root.classList.add("header");
   const day = document.createElement("span");
-  const head = document.createElement("h1");
+  const head = document.createElement("h1");git 
   const temperature = document.createElement("span");
   ///setting class names / attributes / text 
   day.classList.add("date");
@@ -15,7 +15,7 @@ const Header = (title, date, temp) => {
   root.appendChild(day);
   root.appendChild(head);
   root.appendChild(temperature);
-  
+
   return root;
 }
 
