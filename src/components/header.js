@@ -26,14 +26,17 @@ day.textContent = `${ date }`
 degrees.textContent = `${ temp }`
 header.textContent = `${ title }`
 // Appending 
-root.appendChild(date);
+root.appendChild(day);
 root.appendChild(header);
 root.appendChild(degrees);
 
 return root;
 }
-console.log(root);
+
 const headerAppender = (selector) => {
+  const root = document.querySelector(selector);
+  const newCard = Header("Lambda Times", "January 6, 2021", "26°");
+  root.appendChild(newCard);
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
