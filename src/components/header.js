@@ -11,8 +11,28 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-}
 
+// Hierarchy 
+const root = document.createElement("div");
+const day = document.createElement("span");
+const header = document.createElement("h1");
+const degrees = document.createElement("span");
+// Class Names
+root.classList.add("header");
+day.classList.add("date");
+degrees.classList.add("temp");
+// Text Content 
+day.textContent = `${ date }`
+degrees.textContent = `${ temp }`
+header.textContent = `${ title }`
+// Appending 
+root.appendChild(date);
+root.appendChild(header);
+root.appendChild(degrees);
+
+return root;
+}
+console.log(root);
 const headerAppender = (selector) => {
   // TASK 2
   // ---------------------
