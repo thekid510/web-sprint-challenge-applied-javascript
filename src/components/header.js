@@ -35,8 +35,8 @@ return root;
 
 const headerAppender = (selector) => {
   const root = document.querySelector(selector);
-  const newCard = Header("Lambda Times", "January 6, 2021", "26°");
-  root.appendChild(newCard);
+  const newHead = Header("Lambda Times", "January 6, 2021", "26°");
+  root.appendChild(newHead);
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.

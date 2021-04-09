@@ -1,4 +1,35 @@
+import axios from "axios";
 const Card = (article) => {
+  const {headline, heroImg, writerName} = article;
+  // Building Hierarchy 
+  const root = document.createElement("div");
+  const heading = document.createElement("div");
+  const author = document.createElement("div");
+  const imgContainer = document.createElement("div");
+  const image = document.createElement("img");
+  const span = document.createElement("span");
+ // Adding class names
+ root.classList.add("card");
+ heading.classList.add("headline");
+ author.classList.add("author");
+ imgContainer.classList.add("img-container")
+ // adding image attribute
+ image.setAttribute(`src`, heroImg);
+ // text content 
+ heading.textContent = `${ headline }`;
+ span.textContent = `By ${ writerName }`;
+// appending 
+root.appendChild(headline);
+root.appendChild(author);
+imgContainer.appendChild(image);
+author.appendChild(imgContainer);
+author.appendChild(span);
+
+root.addEventListener("click", (event)=>{
+  console.log(heading);
+})
+
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
